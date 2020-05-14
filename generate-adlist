@@ -1,0 +1,24 @@
+#!/bin/bash
+
+if [ -z $1 ];then
+  echo "Provide a file of blocklists to generate adlist.json"
+  exit 1
+fi
+
+ID=1
+LIST="["
+for i in $(cat $1)
+do
+LIST="$LIST {\"id\": $ID, \"address\": \"$i\", \"enabled\":1, \"date_added\": $NOW, \"date_modified\": $NOW, \"comment\": \"Bulk import\"},"
+ID=$((ID+1))
+done
+
+LIST="$LIST]"
+FILE="adlist.json"
+echo $LIST|sed 's/,]$/]/' > $FILE
+ARCHIVE="adlist-generated-$(date +%FT%X).tar.gz"
+tar -zcvf $ARCHIVE $FILE
+rm -rf adlist.json
+echo "$ARCHIVE has been created and can now be imported via Pihole Teleporter"
+
+
