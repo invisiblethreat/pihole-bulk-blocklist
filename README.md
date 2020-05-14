@@ -16,6 +16,6 @@ adlist-generated-2020-05-14T18:49:35.tar.gz has been created and can now be impo
 
 Use the 'Teleporter' option in 'Settings'. Decide whether you'd like to clobber your current lists.
 
-![](images/teleporter.png)
+![](images/teleport.png)
 
 
