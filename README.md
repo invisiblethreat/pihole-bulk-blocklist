@@ -1,8 +1,8 @@
 # Bulk Upload Blocklists
 
-In the 5.0 release of PiHole, the ability to bulk upload blocklists appears to
-have been left behind. This is a small script to generate `adlist.json` which
-is then added to a tarball that the teleporter will accept.
+I failed to read the input box that shows you can bulk upload on Pihole 5.0.
+Due to this fact, I wrote something that generates a teleporter-compliant file
+to import.
 
 ## To generate
 
